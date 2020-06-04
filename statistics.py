@@ -12,4 +12,4 @@ class Statistic(object):
         plt.bar(x, y, label="line 1")
         plt.xlabel = ("Time (s)")
         plt.ylabel = ("Killed")
-        plt.savefig("Figyre_1.png")
+        plt.savefig("media/Figyre_1.png")

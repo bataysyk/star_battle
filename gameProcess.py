@@ -3,7 +3,6 @@ from statistics import *
 import sys
 from models import *
 import csv
-import time
 
 
 class GameProcess(object):
@@ -15,7 +14,6 @@ class GameProcess(object):
         self.menu_open = False
         self.count = 0
         self.count_for_draw_alien_bullet = 0
-
 
     def information(self):
         text_1 = self.settings.font.render(str(self.hero.killed), 1, (180, 0, 0))
@@ -69,7 +67,7 @@ class GameProcess(object):
                 alian.shoot()
         self.alien_move()
 
-        # if alian passed live_count -= 1
+        # if aliens passed live_count -= 1
         if self.settings.passed == 10:
             self.settings.live_count -= 1
             self.settings.passed = 0
@@ -203,7 +201,7 @@ class GameProcess(object):
                 self.settings.show_record = False
         if self.settings.show_graph:
             self.statistic.create_graph()
-            graph = pygame.image.load("Figyre_1.png")
+            graph = pygame.image.load("media/Figyre_1.png")
             transform_graph = pygame.transform.scale(graph, (self.settings.width, self.settings.height))
             self.settings.screen.blit(transform_graph, (0, 0))
             if keys[pygame.K_ESCAPE]:

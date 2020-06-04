@@ -14,16 +14,16 @@ class Settings(object):
         # self.screen = pygame.display.set_mode((self.width, self.height))
         self.screen = pygame.display.set_mode((self.width, self.height),
                                               pygame.HWSURFACE | pygame.DOUBLEBUF | pygame.FULLSCREEN)
-        self.photo = pygame.image.load("spaces.jpg")
+        self.photo = pygame.image.load("media/spaces.jpg")
         self.fon = pygame.transform.scale(self.photo, (self.width, self.height))
         self.clock = pygame.time.Clock()
         self.tick_rate = 30
-        self.game_over = pygame.image.load("game_over.png")
+        self.game_over = pygame.image.load("media/game_over.png")
         self.title = pygame.display.set_caption("Star Battle")
         self.font = pygame.font.Font(None, 40)
-        self.live = pygame.image.load("live.png")
-        self.music = pygame.mixer.music.load('fon_sound.mp3')
-        self.icon = pygame.display.set_icon(pygame.image.load("package_2.png"))
+        self.live = pygame.image.load("media/live.png")
+        self.music = pygame.mixer.music.load('media/fon_sound.mp3')
+        self.icon = pygame.display.set_icon(pygame.image.load("media/package_2.png"))
         self.records = False
         self.hero_died = False
         self.show_record = False
@@ -65,9 +65,9 @@ class Hero(object):
         self.speed = 5
         self.left = False
         self.right = False
-        self.walkRight = pygame.image.load("package_1.png")
-        self.walkLeft = pygame.image.load("package_3.png")
-        self.playerStand = pygame.image.load("package_2.png")
+        self.walkRight = pygame.image.load("media/package_1.png")
+        self.walkLeft = pygame.image.load("media/package_3.png")
+        self.playerStand = pygame.image.load("media/package_2.png")
         self.killed = 0
         self.hero_bullets = []
 
@@ -91,7 +91,6 @@ class Hero(object):
             self.hero_bullets.append(new_bullet)
 
 
-
 class Alien(object):
     def __init__(self, x=0, y=0, status=True, reload=random.randint(0, 15)):
         self.x = x
@@ -101,7 +100,7 @@ class Alien(object):
         self.alien_turn = 2
         self.alien_speed = 5
         self.status = status
-        self.alien_img = pygame.image.load("enemies.png")
+        self.alien_img = pygame.image.load("media/enemies.png")
         self.alien_bullets = []
         self.reload = reload
 
